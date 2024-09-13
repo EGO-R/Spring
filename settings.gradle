@@ -1,0 +1,3 @@
+rootProject.name = 'Spring'
+include 'common-logging-starter'
+

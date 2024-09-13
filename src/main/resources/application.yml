@@ -1,0 +1,50 @@
+spring:
+  mvc:
+    format:
+      date: iso
+  application:
+    name: Spring
+  profiles:
+    active: db
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring
+    username: postgres
+    password: Egor2004
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        hbm2ddl:
+          auto: validate
+    open-in-view: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 9342709851-f421uesnfsu3iakg5t2if199s9lmcmdq.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: http://localhost:8080/login/oauth2/code/google
+            scope: openid, email,profile
+
+  messages:
+    basename: messages
+
+
+#db:
+#  username: postgres
+#  password: Egor2004
+#  pool:
+#    size: 12
+#  driver: PostgresDriver
+#  url: postgres:5432
+#  hosts: localhost,127.0.0.1
+logging:
+  level:
+    root: info
+    org.java4me.spring.database.pool.ConnectionPool: info
+  file:
+    name: spring.log
+    path: /
